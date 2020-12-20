@@ -13,6 +13,8 @@ class Solution {
 
         
         // find a estimate end for binary search
+        // the idea is pretty much like dynamic array (vector)
+        // exponential backoff
         while (reader.get(i) < target) {
             i = i * 2;
         }
