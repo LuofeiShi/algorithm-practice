@@ -1,0 +1,27 @@
+class Solution {
+	public List<List<Integer>> subsetWithDup(int[] nums) {
+		List<List<Integer>> results = new ArrayList<>();
+
+		Arrays.sort(nums);
+
+		List<Integer> subset = new ArrayList<>();
+		subsetsHelper(nums, 0, subset, results);
+
+		return results;
+	}
+
+	private void subsetHelper(int[] nums, int startIndex, 
+		List<Integer> subset, List<List<Integer>> results) {
+		// deep copy subset
+		results.add(new ArrayList<Integer>(subset));
+
+		for (int i = startIndex; i < nums.length; i++) {
+			if (i > 0 && nums[i] == nums[i - 1] && i != startIndex) {
+				continue;
+			}
+			subset.add(nums[i]);
+			subsetsHelper(nums, i + 1, subset, results);
+			subset.remove(subset.size() - 1);
+		}
+	}
+}
