@@ -33,5 +33,5 @@ class Solution {
             return NOT_BALANCE;
         }
         return Math.max(left, right) + 1;
-    }
+    } 
 }
