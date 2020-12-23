@@ -16,3 +16,29 @@ public class Solution {
 		traverse(root.right, result);
 	}
 }
+
+// iterate version
+public class Solution {
+	public List<Integer> preorderTraversal(TreeNode node) {
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		List<Integer> preorder = new ArrayList<Integer>();
+
+		if (root == null) {
+			return preorder;
+		}
+
+		stack.push(root);
+		while (!stack.empty()) {
+			TreeNode node = stack.pop();
+			preorder.add(node.val);
+			if (node.right != null) {
+				stack.push(node.right);
+			}
+			if (node.left != null) {
+				stack.push(node.left);
+			}
+		}
+
+		return preorder;
+	}
+}
