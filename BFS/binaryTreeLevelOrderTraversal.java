@@ -7,12 +7,12 @@ class Solution {
 		}
 
 		// 1. create a queue and push the root in
-		Queue<TreeNode> qeuue = new LinkedList<>();
+		Queue<TreeNode> queue = new LinkedList<>();
 		queue.offer(root);
 
 		// 2. create a while loop if the queue is not empty
 		while (!queue.isEmpty()) {
-			ArrayList<Integer> level = new ArrayList<>();
+			List<Integer> level = new ArrayList<>();
 			int size = queue.size();
 
 			for (int i = 0; i < size; i++) {
