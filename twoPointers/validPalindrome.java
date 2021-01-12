@@ -28,6 +28,6 @@ public class Solution {
 	}
 
 	private boolean  isvalid(char c) {
-		return Character.isLetter(c) || Character.isDigit(c);
+		return Character.isLetter(c) || Character.isDigit(c);	
 	}
 }
