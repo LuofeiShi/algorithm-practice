@@ -22,9 +22,7 @@ class Solution {
                 }
                 if (nums[i] + nums[j] + nums[k] == 0) {
                     List<Integer> current = new ArrayList<>();
-                    current.add(nums[i]);
-                    current.add(nums[j]);
-                    current.add(nums[k]);
+                    Collections.addAll(current, nums[i], nums[j], nums[k]);
                     result.add(current);
                 }
             }
